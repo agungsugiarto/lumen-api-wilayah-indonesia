@@ -102,12 +102,9 @@ $app->middleware([
 // $app->register(App\Providers\EventServiceProvider::class);
 
 $app->register(App\Providers\JsonApiPaginateServiceProvider::class);
+$app->register(Flipbox\LumenGenerator\LumenGeneratorServiceProvider::class);
 $app->register(Fruitcake\Cors\CorsServiceProvider::class);
 $app->register(Maatwebsite\Excel\ExcelServiceProvider::class);
-
-if (env('APP_DEBUG')) {
-    $app->register(Flipbox\LumenGenerator\LumenGeneratorServiceProvider::class);
-}
 
 /*
 |--------------------------------------------------------------------------
