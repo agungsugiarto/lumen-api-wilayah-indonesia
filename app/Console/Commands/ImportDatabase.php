@@ -42,28 +42,20 @@ class ImportDatabase extends Command
      */
     public function handle()
     {
-        DB::beginTransaction();
+        $this->output->title('Starting import');
 
-        try {
-            $this->output->title('Starting import');
+        (new ProvinceImport())->withOutput($this->output)
+            ->import('provinces.csv', 'local', \Maatwebsite\Excel\Excel::CSV);
 
-            (new ProvinceImport())->withOutput($this->output)
-                ->import('provinces.csv', 'local', \Maatwebsite\Excel\Excel::CSV);
+        (new RegencyImport())->withOutput($this->output)
+            ->import('regencies.csv', 'local', \Maatwebsite\Excel\Excel::CSV);
 
-            (new RegencyImport())->withOutput($this->output)
-                ->import('regencies.csv', 'local', \Maatwebsite\Excel\Excel::CSV);
+        (new DistrictImport())->withOutput($this->output)
+            ->import('districts.csv', 'local', \Maatwebsite\Excel\Excel::CSV);
 
-            (new DistrictImport())->withOutput($this->output)
-                ->import('districts.csv', 'local', \Maatwebsite\Excel\Excel::CSV);
-
-            (new VillageImport())->withOutput($this->output)
-                ->import('villages.csv', 'local', \Maatwebsite\Excel\Excel::CSV);
-
-            DB::commit();
-            $this->output->success('Import successful');
-        } catch (\Exception $e) {
-            DB::rollBack();
-            $this->output->error($e->getMessage());
-        }
+        (new VillageImport())->withOutput($this->output)
+            ->import('villages.csv', 'local', \Maatwebsite\Excel\Excel::CSV);
+            
+        $this->output->success('Import successful');
     }
 }

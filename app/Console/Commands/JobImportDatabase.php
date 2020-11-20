@@ -38,6 +38,6 @@ class JobImportDatabase extends Command
      */
     public function handle()
     {
-        dispatch(new ImportJob);
+        dispatch(new ImportJob());
     }
 }

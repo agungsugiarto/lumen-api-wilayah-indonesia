@@ -2,8 +2,6 @@
 
 /** @var \Laravel\Lumen\Routing\Router $router */
 
-use App\Jobs\ImportJob;
-
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -16,7 +14,6 @@ use App\Jobs\ImportJob;
 */
 
 $router->get('/', function () use ($router) {
-    dispatch(new ImportJob);
     return $router->app->version();
 });
 
