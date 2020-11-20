@@ -2,7 +2,9 @@
 
 namespace App\Jobs;
 
-class ExampleJob extends Job
+use Illuminate\Support\Facades\Artisan;
+
+class ImportJob extends Job
 {
     /**
      * Create a new job instance.
@@ -21,6 +23,6 @@ class ExampleJob extends Job
      */
     public function handle()
     {
-        //
+        Artisan::call('import:database');
     }
 }
