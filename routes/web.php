@@ -19,7 +19,7 @@ $router->get('/', function () use ($router) {
 
 $router->group(['prefix' => 'api/v1'], function () use ($router) {
     /**
-     * Province
+     * Province.
      */
     $router->group(['prefix' => 'provinces'], function () use ($router) {
         $router->get('/', 'ProvinceController@index');
@@ -27,7 +27,7 @@ $router->group(['prefix' => 'api/v1'], function () use ($router) {
     });
 
     /**
-     * Regency
+     * Regency.
      */
     $router->group(['prefix' => 'regencies'], function () use ($router) {
         $router->get('/', 'RegencyController@index');
@@ -35,7 +35,7 @@ $router->group(['prefix' => 'api/v1'], function () use ($router) {
     });
 
     /**
-     * District
+     * District.
      */
     $router->group(['prefix' => 'districts'], function () use ($router) {
         $router->get('/', 'DistrictController@index');
@@ -43,7 +43,7 @@ $router->group(['prefix' => 'api/v1'], function () use ($router) {
     });
 
     /**
-     * Village
+     * Village.
      */
     $router->group(['prefix' => 'villages'], function () use ($router) {
         $router->get('/', 'VillageController@index');

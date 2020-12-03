@@ -3,8 +3,8 @@
 namespace App\Entities;
 
 use App\Models\Villages;
-use Spatie\QueryBuilder\QueryBuilder;
 use Spatie\QueryBuilder\AllowedFilter;
+use Spatie\QueryBuilder\QueryBuilder;
 
 class VillageEntity
 {
@@ -20,7 +20,7 @@ class VillageEntity
             ->allowedFilters([
                 AllowedFilter::exact('id'),
                 AllowedFilter::exact('district_id'),
-                'name'
+                'name',
             ])
             ->jsonPaginate();
     }
@@ -38,7 +38,7 @@ class VillageEntity
             ->allowedFilters([
                 AllowedFilter::exact('id'),
                 AllowedFilter::exact('district_id'),
-                'name'
+                'name',
             ])
             ->find($id);
     }
