@@ -7,7 +7,6 @@ use App\Imports\ProvinceImport;
 use App\Imports\RegencyImport;
 use App\Imports\VillageImport;
 use Illuminate\Console\Command;
-use Illuminate\Support\Facades\DB;
 
 class ImportDatabase extends Command
 {
@@ -55,7 +54,7 @@ class ImportDatabase extends Command
 
         (new VillageImport())->withOutput($this->output)
             ->import('villages.csv', 'local', \Maatwebsite\Excel\Excel::CSV);
-            
+
         $this->output->success('Import successful');
     }
 }

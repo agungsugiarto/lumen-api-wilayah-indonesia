@@ -3,9 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Entities\ProvinceEntity;
-use App\Entities\RegencyEntity;
 use App\Http\Transformers\ProvinceTransformer;
-use App\Http\Transformers\RegencyTransformer;
 
 class ProvinceController extends Controller
 {

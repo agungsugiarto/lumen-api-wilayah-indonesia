@@ -20,7 +20,7 @@ class DistrictEntity
             ->allowedFilters([
                 AllowedFilter::exact('id'),
                 AllowedFilter::exact('regency_id'),
-                'name'
+                'name',
             ])
             ->jsonPaginate();
     }
@@ -38,7 +38,7 @@ class DistrictEntity
             ->allowedFilters([
                 AllowedFilter::exact('id'),
                 AllowedFilter::exact('regency_id'),
-                'name'
+                'name',
             ])
             ->find($id);
     }
