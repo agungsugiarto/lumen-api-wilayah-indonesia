@@ -19,7 +19,7 @@ class ProvinceEntity
             ->allowedSorts(['id', 'name'])
             ->allowedFilters([
                 AllowedFilter::exact('id'),
-                'name'
+                'name',
             ])
             ->jsonPaginate();
     }
@@ -36,7 +36,7 @@ class ProvinceEntity
             ->allowedSorts(['id', 'name'])
             ->allowedFilters([
                 AllowedFilter::exact('id'),
-                'name'
+                'name',
             ])
             ->find($id);
     }

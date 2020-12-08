@@ -20,11 +20,11 @@ class RegencyEntity
         ->allowedFilters([
             AllowedFilter::exact('id'),
             AllowedFilter::exact('province_id'),
-            'name'
+            'name',
         ])
         ->jsonPaginate();
     }
-    
+
     /**
      * Get resouce by id.
      *
@@ -38,7 +38,7 @@ class RegencyEntity
             ->allowedFilters([
                 AllowedFilter::exact('id'),
                 AllowedFilter::exact('province_id'),
-                'name'
+                'name',
             ])
             ->find($id);
     }
